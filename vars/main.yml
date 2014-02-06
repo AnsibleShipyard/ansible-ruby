@@ -1,0 +1,6 @@
+---
+ruby_playbook_version: "0.1.0"
+ruby_version: "1.9.3-p484"
+ruby_file_tag: "ruby-{{ruby_version}}"
+ruby_file_name: "{{ruby_file_tag}}.tar.gz"
+ruby_base_url: "http://cache.ruby-lang.org/pub/ruby/{{ruby_file_name}}"

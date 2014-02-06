@@ -1,0 +1,13 @@
+---
+- include: Debian.yml
+  when: ansible_os_family == "Debian"
+
+- name: Download ruby {{ruby_version}}
+  get_url: url={{ruby_base_url}} dest=/tmp/{{ruby_file_name}}
+
+- name: Unpack ruby {{ruby_version}}
+  command: tar -xvzf {{ruby_file_name}} chdir=/tmp
+
+- name: Compile and install ruby {{ruby_version}}
+  shell: ./configure && make && make install chdir=/tmp/{{ruby_file_tag}}
+  sudo: true

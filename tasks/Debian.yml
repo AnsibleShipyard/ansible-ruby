@@ -1,0 +1,8 @@
+---
+- name: Install os packages
+  apt: pkg={{item}} state=present update_cache=yes
+  with_items: 
+    - libreadline-dev
+    - libssl-dev
+    - libyaml-dev
+    - zlib1g-dev
