@@ -8,5 +8,5 @@ ruby_base_url: "http://cache.ruby-lang.org/pub/ruby/{{ruby_file_name}}"
 # Define various gems to install
 ruby_gems:
    - gem: "bundler"
-   - gem: "rake"
-     version: 10.1.1
+   # - gem: "rake"
+   #   version: 10.1.1
