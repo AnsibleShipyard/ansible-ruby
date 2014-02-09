@@ -4,3 +4,9 @@ ruby_version: "1.9.3-p484"
 ruby_file_tag: "ruby-{{ruby_version}}"
 ruby_file_name: "{{ruby_file_tag}}.tar.gz"
 ruby_base_url: "http://cache.ruby-lang.org/pub/ruby/{{ruby_file_name}}"
+
+# Define various gems to install
+ruby_gems:
+   - gem: "bundler"
+   # - gem: "rake"
+   #   version: 10.1.1
