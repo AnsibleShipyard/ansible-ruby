@@ -11,3 +11,13 @@
 - name: Compile and install ruby {{ruby_version}}
   shell: ./configure && make && make install chdir=/tmp/{{ruby_file_tag}}
   sudo: true
+
+- name: Install latest gems
+  command: gem install {{item.gem}}
+  with_items: ruby_gems
+  when: item.version is not defined
+
+- name: Install versioned gems
+  command: gem install {{item.gem}} -v {{item.version}}
+  with_items: ruby_gems
+  when: item.version is defined
