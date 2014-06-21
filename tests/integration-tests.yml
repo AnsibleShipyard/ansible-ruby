@@ -1,0 +1,15 @@
+---
+#
+# integration-tests.yml
+#
+
+- hosts: all
+  sudo: True
+  tasks:
+    # Tests
+    - name: Check ruby
+      command: which ruby
+      register: ruby_path
+    - debug: msg="Ruby was installed in {{ruby_path.stdout}}"
+    - fail: msg="Ruby Not Found, tests failed."
+      when: ruby_path.stdout != "/usr/local/bin/ruby"
